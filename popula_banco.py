@@ -1,19 +1,3 @@
-"""Criação e carga inicial do banco MongoDB (equivalente ao esquema_farmacia.sql).
-
-Uso:
-    python popula_banco.py
-
-O script APAGA as coleções do banco, recria os índices únicos (equivalentes
-às constraints UNIQUE do esquema relacional) e insere os mesmos dados de
-exemplo do Trabalho 1. Diferenças em relação ao modelo relacional:
-
-- itens de venda, de reposição, de devolução e de prescrição ficam EMBUTIDOS
-  nos documentos "pai" (arrays), em vez de tabelas separadas;
-- campos calculados (margem_lucro, valor_total) são gravados já calculados,
-  no lugar de colunas geradas e gatilhos;
-- IDs inteiros sequenciais são mantidos por meio da coleção *contadores*.
-"""
-
 import datetime as dt
 
 from database import ensure_indexes, get_db, test_connection
